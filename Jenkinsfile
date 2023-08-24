@@ -24,10 +24,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script{
-                    withDockerRegistry(credentialsId: 'docker-registry-credentials') {
-                                // Push the Docker image to the registry
                                 sh "docker push ${DOCKER_REGISTRY_URL}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
-                    }  
                 } 
             }
         }   
